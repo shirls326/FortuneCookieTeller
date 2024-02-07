@@ -26,5 +26,6 @@ function randomFortune() {
     let index = Math.floor(Math.random * fortunes.length);
     let quote = fortunes[index]
 
-    document.getElementById();
+    fortuneText = document.getElementById("[insert cookie text id here]");
+    fortuneText.innerText = quote;
 }
