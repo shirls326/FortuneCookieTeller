@@ -2,3 +2,12 @@
     margin: 0 auto;
 }
 
+.cookieClosed:hover {
+    animation: shake .3s ease-in-out infinite;
+}
+  
+@keyframes shake {
+    0% { transform: translateX(0) rotate(15deg); }
+    50% { transform: translateX(0) rotate(-15deg); }
+    100% { transform: translateX(0) rotate(15deg); }
+}
