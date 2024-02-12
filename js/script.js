@@ -21,11 +21,31 @@ let fortunes = [
     "Surround yourself with those who lift you higher; positivity is contagious."
 ]
 
+let cookieOpened = false;
 
 function randomFortune() {
-    let index = Math.floor(Math.random * fortunes.length);
-    let quote = fortunes[index]
+    if (cookieOpened) {
+        return;
+    }
 
-    fortuneText = document.getElementById("[insert cookie text id here]");
+    let index = Math.floor(Math.random() * fortunes.length);
+    let quote = fortunes[index];
+
+    let cookieImage = document.getElementById("fortune-image");
+    let fortuneText = document.getElementById("fortune-text");
+
     fortuneText.innerText = quote;
+    cookieImage.src = "images/opencookie.png";
+    cookieImage.classList.remove("cookieClosed");
+    cookieOpened = true;
+}
+
+function resetFortune() {
+    let cookieImage = document.getElementById("fortune-image");
+    let fortuneText = document.getElementById("fortune-text");
+
+    cookieOpened = false;
+    cookieImage.classList.add("cookieClosed");
+    cookieImage.src = "images/closedcookie.png";
+    fortuneText.innerText = "";
 }
